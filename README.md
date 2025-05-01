@@ -1,1 +1,238 @@
-# agentic-coding.github.com
+# Agentic Coding Principles & Practices
+
+## Overview
+
+This repository shares the **'Agentic Coding 6 Principles and 28 Practices'** designed to help developers using AI Coding Agents move **'Beyond Vibe Coding to Agentic Coding'**. The goal is to provide specific guidelines for leveraging the powerful capabilities of generative AI and coding agents to maximize development productivity, while simultaneously managing potential risks and upholding developer accountability for code quality, security, and maintainability.
+
+
+## Motivation
+
+AI coding agents allow us to instantly turn our ideas into real code in surprising ways, almost like **'Speaking things into existence.'** (This phrase and the core idea were greatly inspired by Ethan Mollick's article, '[Speaking things into existence, Mar 12, 2025](https://www.oneusefulthing.org/p/speaking-things-into-existence)'.) Like casting a '3rd-circle fireball' spell with a simple incantation, we can easily generate code to quickly implement features with AI's help. I myself experimented with creating a fishing app prototype this way, despite having zero prior mobile development experience. It was a surprising experience where, within just one week, I used AI assistance not just for implementing code but for the *software development lifecycle (SDLC)* – from project planning, product requirements, design, core feature implementation, and even basic QA preparation (like test case generation) – achieving a decent result primarily using AI assistance.
+
+However, these 'easily summoned existences' are often difficult to control, and the resulting code has a high probability of being messy. Like a powerful but crude fireball, while its might seems impressive for simple experiments or hobby projects, it can be inadequate or even dangerous to apply directly in production environments where stability, quality, and maintainability are crucial. Such code easily leaves behind the dark mana of 'technical debt' that we eventually have to pay for.
+
+What we truly need in our actual work isn't just simple fireballs, but powerful, sophisticated, and reliable results akin to a '9th-circle meteor strike' – outcomes that solve complex problems and create sustainable value. In other words, we need to effectively collaborate with AI to produce high-quality, stable code suitable for real product development.
+
+Generative AI and coding agent technology have advanced dazzlingly, but safely and accurately summoning a 'meteor' still requires the caster – us developers – to possess deep understanding, a cautious approach, and skilled 'spell control techniques.' Simply having a powerful tool doesn't automatically guarantee great results.
+
+This repository stems from these considerations. It aims to share the **'Agentic Coding Principles and Practices'** for responsibly creating 'meteor-level' results suitable for actual production environments by collaborating with AI coding agents, moving beyond just generating 'fireball-level' code.
+
+I organize and share these principles and practices hoping to see more fellow wizards (developers) who go beyond shooting fireballs as a hobby and instead summon powerful, sophisticated 'meteors' together with AI in their real work.
+
+
+## Principles
+
+These principles provide the fundamental guidelines for practicing effective and accountable **'Agentic Coding'**, regardless of the specific AI coding tools, technology stack, developer role, or seniority level.
+
+### 1. Developer Accountability
+
+* **Description:** Even when assisted by an AI agent, the developer holds ultimate responsibility for the quality, functionality, performance, security, and maintainability of the code they write (or finally approve) and commit to the system.
+* **Core:** AI is merely a tool; the human is the one accountable. "The AI did it" is not a valid excuse.
+
+### 2. Understand and Verify
+
+* **Description:** Code generated or suggested by AI should not be accepted or used without a clear understanding of it. Before integrating any code into the system, its functionality and implications must be fully understood and thoroughly verified (including code reviews and testing).
+* **Core:** Blindly accepting code is prohibited. This prevents hidden bugs or unintended side effects.
+
+### 3. Prioritize Security and Confidentiality
+
+* **Description:** Do not input or share the company's sensitive information (source code, API keys, internal data, customer information, intellectual property, etc.) directly with external AI agents not explicitly approved by the company. Even when using approved tools, remain vigilant about the potential for unintentional data leakage through agents, intermediate servers, etc., and strictly adhere to all company security policies and guidelines.
+* **Core:** Prevent data breaches and security incidents.
+
+### 4. Maintain Code Quality, Standards, Consistency
+
+* **Description:** The developer is responsible for ensuring that any code generated by an AI agent is modified and managed to meet the team's and company's coding conventions, architectural patterns, design systems, security standards, and relevant compliance requirements.
+* **Core:** Maintain codebase consistency and quality, and manage technical debt effectively.
+
+### 5. Human-Led Design and Critical Thinking
+
+* **Description:** Core system design, architectural decisions, and the implementation of critical business logic must be led by the developer. Utilize AI agents in a supporting role (e.g., for ideation, implementation assistance), but always critically evaluate their suggestions and avoid blind acceptance.
+* **Core:** Recognize AI's limitations; base crucial decisions on human insight and experience.
+
+### 6. Recognize AI's Limitations and Adapt to Technological Change
+
+* **Description:** Be aware of and utilize AI within its capabilities and recognized limitations (e.g., hallucinations, biases, outdated knowledge, lack of contextual understanding). Keep pace with rapidly evolving AI technologies and tools. Continuously update understanding of effective usage patterns and risks, and enhance skills through exploring/experimenting with new features/techniques, sharing successes/failures within the team, and participating in relevant communities.
+* **Core:** Do not over-rely on AI; clearly understand its boundaries. Continuously adapt to changing technology and consistently build team capabilities.
+
+
+## Practices
+
+These practices provide concrete methodologies and guidelines on how to apply the principles of AI collaborative development in a real-world work environment, providing the practical guidance needed to translate theoretical principles into actionable steps.
+
+### A. Preparation and Setup
+
+This category covers the setup process, focusing on optimizing rules for consistent AI agent behavior and providing the necessary structural and design context for effective task execution within a specific project.
+
+#### 1. Setting Agent Rules and Base Context
+
+Actively leverage the custom configuration features of your AI agent (e.g., `.cursor/rules`, `CLAUDE.md`, `.windsurfrules`) to preset and fine-tune the rules the AI must always adhere to, along with persistent contextual information it should reference. This includes details like team coding standard summaries, architectural principles, key library lists/versions, GitFlow policies, and other project-wide base technology stack details and conventions.
+
+#### 2. Providing Project Structure and Design Context
+
+For an AI agent to correctly modify or generate code within a specific project, understanding the project's unique code structure and design intent is crucial. Explicitly provide structural and design context for the AI to reference, including the roles and responsibilities of key directories, modules, and classes, data flow patterns, and specific library usage conventions within the project.
+
+
+### B. Strategic AI Usage
+
+This category covers practices for judging when and for what purpose to appropriately use AI for effective usage. The focus is on a strategic approach that avoids indiscriminate use and maximizes the AI's strengths.
+
+#### 3. Defining Task-Specific AI Strategies
+
+Before initiating a task, determine if it's one where AI can largely drive implementation based on detailed specifications (requirements, design documents, etc.), such as feature implementation, refactoring, or test generation. Alternatively, assess if it requires significant human involvement, including in-depth design reviews, intervention during implementation, and rigorous validation of the final output – typical for tasks like designing new core architecture, handling sensitive data logic, or implementing complex business rules. Based on this assessment, decide the appropriate level and role of human intervention. For AI-driven tasks, focus on providing highly detailed and clear specifications, followed by thorough verification. For human-led tasks, ensure deep involvement from the initial design through final code review and modification to steer direction and manage risks. Regardless of the approach, ultimate responsibility remains with the developer; avoid fully autonomous execution.
+
+#### 4. Adapting AI Strategy Based on Context
+
+When the AI demonstrably hinders progress by repeatedly offering inaccurate code, suggesting stopgap solutions, introducing security risks, or showing other clear performance limitations, flexibly adjust your AI **usage** strategy instead of rigidly sticking to the initial approach. Consider trying the following:
+
+* **Leverage External Information:** Instruct the AI to use external web searches or similar tools to find analogous problem cases or up-to-date solutions.
+* **Consider Different LLMs:** The current model might not be suitable for the task. If possible, try switching to a different type of LLM.
+* **Reorient AI and Probe Root Causes:** If the AI seems stuck on superficial aspects of the problem, re-provide broader code context or system architecture information and guide it to analyze the underlying root cause.
+* **Request Deeper Thinking/Planning:** Use keywords like "think deeper," "take your time," or similar prompts (where supported) to encourage the AI to allocate more resources to planning or analyzing the problem (See e.g., [Claude Extended Thinking Tips](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/extended-thinking-tips)).
+
+#### 5. Leveraging Multiple Agents (Parallel Use / Collaboration)
+
+Move beyond single-agent use and consider strategies that leverage multiple AI agent instances simultaneously (either different agent types or multiple windows/tabs of the same agent) to enhance development efficiency and quality. Examples include: (1) **Specializing agents:** one generates code while another reviews it for quality/security. (2) **Role division:** one agent writes tests, and another writes the code to pass them. (3) **Parallel processing:** run different tasks concurrently in multiple agent windows/tabs, making productive use of response wait times.
+
+
+### C. Interaction and Prompting
+
+This category details practices for specific interaction methods and prompt engineering techniques to communicate effectively with AI and achieve desired outcomes. The emphasis is on maximizing AI performance through clear instructions, effective context utilization, and iterative refinement.
+
+#### 6. Crafting Specific and Clear Prompts
+
+AI cannot perfectly infer human intent or omitted context. Avoid vague requests; instead, formulate prompts that are as specific and unambiguous as possible from the AI's perspective, clearly stating the goal (What), context (Where), constraints, and requirements (How). Always assume that what seems clear to you may be insufficient or ambiguous for the AI. If the output doesn't meet expectations, iteratively refine the prompt.
+
+#### 7. Decomposing Tasks into Manageable Units
+
+AI performs better on clear, manageable units of work than on large, complex tasks. Instead of assigning a major feature request all at once, decompose the work into meaningful, smaller steps (e.g., functions, modules, small feature increments). Request these steps sequentially and integrate the results. However, overly granular decomposition can lead to loss of overall context or consistency. It's crucial to find the appropriate level of decomposition based on task complexity and AI capabilities, and always review for overall consistency during integration.
+
+#### 8. Ensuring Consistency with Code Examples (Few-Shot Prompting)
+
+AI often generates more accurate and consistent results when provided with specific examples (few-shot prompting). When adding or modifying features, rather than simply instructing the AI to follow a pattern, it's more effective to include relevant existing code snippets or examples of similar functionality within the prompt. This guides the AI to learn the style, structure, and patterns from the examples and implement the new code consistently.
+
+#### 9. Prioritizing Exploration Before Implementation/Planning
+
+When tackling complex problems or unfamiliar codebases, instruct the AI to first explore relevant background information by reading specified files, documentation, or URLs *before* asking it to implement code or create a plan. During this exploration phase, explicitly prevent the AI from prematurely generating code or suggesting solutions. This ensures a better foundation of understanding for subsequent planning and implementation.
+
+#### 10. Adopt a "Plan First, Code Later" Approach
+
+For complex or critical tasks, require the AI to first outline its implementation plan or approach. This allows you to verify its understanding of the context and instructions before proceeding. Only instruct the AI to generate the actual code *after* you have reviewed and approved the plan. This helps catch misunderstandings or incorrect approaches early, ultimately saving time and effort.
+
+#### 11. Monitor and Intervene During AI Task Execution
+
+Even with clear instructions, AI can sometimes head in unintended directions. If the agent exhibits unexpected or inefficient behavior – such as performing unrequested tasks, modifying code when only asked a question, or altering code unpredictably – immediately interrupt its execution (e.g., press `Escape`) and provide clear feedback to redirect it. For this reason, avoid using fully autonomous execution modes that delegate the entire process to the AI.
+
+#### 12. Use AI as a Learning Partner via Open-Ended Questions
+
+Beyond giving direct commands, leverage AI as a learning partner. Actively ask open-ended questions or request alternatives to explore solutions or gain diverse ideas for tasks like researching new technologies/APIs, analyzing error root causes, understanding a codebase (onboarding), or brainstorming problem-solving approaches. Examples include: "What are alternative approaches to X?", "What are the pros and cons of Y?", "What factors should I consider for Z?". This taps into the AI's analytical and exploratory capabilities.
+
+#### 13. Manage Context Window and Separate Sessions
+
+To maximize the AI's use of context, manage conversation sessions so that each session ideally focuses on a single responsibility or task (similar to the Single Responsibility Principle - SRP). Always start a new session for a new task to prevent interference from previous dialogue. If a conversation within a single task becomes too long and risks exceeding the context window limit (or if the AI seems confused even before the limit), summarize the key progress and context so far. Provide this summary as the initial prompt in a new session to maintain the AI's focus and performance.
+
+
+### D. Code Review and Verification
+
+This category covers essential review and verification practices needed to ensure the quality, correctness, and security of code generated or modified by AI agents, and to guarantee the developer fully understands its functionality. Remember, the ultimate responsibility for agent-generated code lies with the developer.
+
+#### 14. Immediately Check Generated Code
+
+Failing to check generated code before moving on risks compounding errors. Once code is generated, immediately review it to quickly verify that the output aligns with the basic intent. If issues are found, address them early to avoid building further work upon incorrect code.
+
+#### 15. Prohibit Use of Incomprehensible Code
+
+Never use generated code if you cannot clearly understand how it works and explain it to a colleague. If you suspect it misaligns with the design intent or harbors hidden issues (bugs, inefficiencies, security vulnerabilities, etc.), do not use it. Instead, regenerate it, modify it, or write it yourself. Asking the agent for explanations aids understanding, but the ultimate responsibility for comprehension and the decision to use the code lies solely with the developer.
+
+#### 16. Check Basic Code Quality and Standards
+
+Before integration, verify that generated code not only works functionally but also adheres to team coding standards (style guides, naming conventions, etc.) and is free from obvious performance bottlenecks or security vulnerabilities. This serves as an initial quality gate to assess basic code integrity and safety prior to functional testing or peer review, focusing on identifying code smells, standards violations, and potential risks.
+
+#### 17. Perform Behavioral Tests and Validate Test Code
+
+Code generated or modified by AI can behave unexpectedly or miss edge cases. Always verify its intended behavior by running unit/integration tests or through direct execution. Critically, validate the generated test code itself: ensure it provides adequate coverage and employs correct assertion logic. Include manual testing and edge case verification where necessary.
+
+#### 18. Verify Accuracy and Up-to-dateness
+
+Code snippets (e.g., specific API usage, library versions) or explanations (technical details, usage patterns) provided by AI may contain inaccuracies (hallucinations) or be outdated. Always cross-verify both the code and associated information against authoritative sources like official documentation and reputable technical resources to confirm accuracy and ensure they reflect the latest information.
+
+#### 19. Prepare for Effective Peer Review
+
+Cross-validation via peer code review is especially crucial for AI-generated code. To facilitate an effective review, when submitting code: (1) Clearly indicate which AI tool was used and the extent of its contribution. (2) Distinguish clearly (if necessary) between purely AI-generated sections and those modified or refined by the developer. This helps reviewers understand the context accurately and focus on potential AI-specific pitfalls (e.g., common hallucination patterns or logical flaws), enabling more thorough validation.
+
+> **[Note]** Code quality should be assessed against the same standards, regardless of whether it was written by a human or an AI agent. However, in these early stages of AI code generation technology, complete trust is difficult, and agent-specific error patterns may exist. Transparently sharing information about AI involvement, as suggested above, helps peer reviewers understand the context, scrutinize the code more closely for potential issues, and gradually build confidence in AI-assisted workflows. These guidelines may evolve as AI technology and team collaboration practices mature.
+
+
+### E. Quality, Standards, and Security
+
+This category outlines practices to ensure that code generated via AI assistance, and the development process itself, meet the team's and company's quality criteria, technical standards, and security requirements. These are essential for maintaining the long-term health and reliability of the codebase.
+
+#### 20. Ensure Generated Code Adheres to Team Standards
+
+Since AI agents are unaware of team-specific coding standards, style guides, or architectural rules, ensuring compliance for generated code is the developer's responsibility. Utilize a combination of the following methods:
+
+* **Provide Upfront Guidance:** Configure agent tools with team standards/conventions (see A#1) or include relevant code examples in prompts (see C#8) to guide the agent towards adhering to existing styles as much as possible.
+* **Automated Checks:** Mandate the use of linters and formatters, running them before commits to automatically check for style issues and basic rule violations.
+* **Final Review and Correction:** Even if automated checks pass, perform a final manual review to fix any remaining non-compliance with team standards, or request revisions from the agent.
+
+#### 21. Keep Sensitive Data Separate from Code/Prompts
+
+Keep sensitive data, such as API keys and personal information, completely separate from the codebase. Store it securely using methods like `.env` files (added to `.gitignore`) or dedicated secrets management tools (e.g., Secrets Manager). Avoid hardcoding sensitive data in the code, and strictly prohibit inputting or pasting such information directly into prompts when interacting with AI agents.
+
+#### 22. Verify and Apply Agent Tool Security Settings
+
+(1) Agent workspace indexing can potentially expose sensitive file content by including it in the chat context shared externally. Use relevant configuration files (e.g., `.cursorignore`) to explicitly exclude sensitive files and directories from indexing. (2) Always verify and enable the AI service provider's options to opt-out of data usage for training or similar security settings to prevent submitted code and data from being used for model improvements.
+
+#### 23. Refactor Generated Code to Meet Quality Standards
+
+Treat generated code as a first draft, as it often lacks awareness of the broader system context, may employ unconventional patterns, or could be inefficient. Even after passing functional verification (#17) and basic quality checks (#16), always critically refactor the code before integration to align with team standards. Focus on criteria such as readability, efficiency, eliminating duplication, maintainability, and adherence to design principles/patterns. Actively improve unclear or non-standard names (variables, functions, etc.) and unnecessary complexity introduced by the agent.
+
+
+### F. Workflow and Mindset
+
+This final category covers practices related to overall development workflow habits, effective tool usage patterns, and the essential mindset required for successful AI agent adoption and collaboration. It aims to contribute to a sustainable collaborative culture that extends beyond purely technical aspects.
+
+#### 24. Use State and Context for Complex Task Management
+
+For complex tasks involving multiple steps or dependencies on prior states (e.g., large-scale refactoring, migrations), guide systematic progress by instructing the agent to use a dedicated context space, such as a `plan.md` file or a detailed Jira ticket, for tracking task status and referencing progress. This helps the agent manage and follow the overall plan effectively.
+
+#### 25. Manage Checkpoints and Roll Back Fearlessly
+
+Agents can occasionally go far down an incorrect path, making manual reversion difficult. To mitigate this, meticulously manage revertible checkpoints: (1) Make frequent, meaningful Git commits. (2) Utilize conversation or task-level restore points if your tools support them. Since regenerating code with AI is often low-cost, if you determine the process has gone awry, don't hesitate to roll back to the nearest checkpoint. Restart the process with revised instructions or context that addresses the cause of the derailment.
+
+#### 26. Leverage AI for Smarter Debugging
+
+Leverage AI agents to streamline the debugging process. (1) At a minimum, provide the exact error message and relevant code snippets to the agent for root cause analysis and potential solutions. (2) With a robust logging system, you can even guide the agent to analyze logs to proactively detect and suggest fixes for issues. (3) Some advanced agents can perform active debugging by autonomously inserting, executing, and removing temporary debugging code (like logging statements) to pinpoint and resolve problems. Utilize these approaches to reduce debugging time and create learning opportunities.
+
+#### 27. Share Team Knowledge: Prompts, Lessons Learned, etc.
+
+Team-level learning is crucial for effective AI collaboration. Actively share and discuss relevant experiences using established team channels (e.g., Wiki, internal blogs): (1) Prompt examples that worked well for specific tasks or led to failures/inefficiencies. (2) Specific instances of agent errors (like hallucinations) or unexpected successes. (3) Know-how or useful discoveries gained during problem-solving. This collective sharing enhances the team's overall proficiency in using AI agents and solving problems.
+
+#### 28. Experiment Fearlessly and Have Fun
+
+Embrace the AI agent not merely as a tool, but as a multifaceted collaborative partner: sometimes a pair programmer assisting with code generation, an assistant offloading repetitive tasks, a mentor offering problem-solving hints, or a gateway to new knowledge. With a safe environment for experimentation (thanks to checkpoints, #25), the key to effective use is to maintain curiosity, try diverse collaboration approaches, and enjoy the process of exploring the possibilities.
+
+
+## Conclusion
+
+The emergence of AI coding agents represents more than just a technological trend; it signifies a fundamental paradigm shift in software development. We might recall the productivity gains brought by the transition from text editors to Integrated Development Environments (IDEs) in the past. However, the changes AI coding agents are bringing may potentially surpass even that. This is because it goes beyond merely using better tools—it fundamentally redefines our very way of working. 'Agentic Coding' is an approach within this wave of change that treats AI not just as an automation tool, but as a collaborative partner that amplifies developer creativity and strategic thinking, aiming to responsibly create higher-level outcomes.
+
+The principles and practices presented in this document serve as guidelines for effective collaboration at the present time. They emphasize the importance of the developer's proactive role, critical thinking, and ultimate responsibility on the journey to ensure the quality and safety of AI-generated output and make it applicable to a production environment level.
+
+Of course, challenges lie ahead. These include ensuring the long-term maintainability of AI-generated code, bridging the knowledge gap so all developers can effectively use AI tools, and preventing the erosion of critical thinking skills due to over-reliance on technology. At the same time, immense opportunities are emerging: the barrier to entry for coding is lowering, and developers have more capacity to focus on creative and innovative problem-solving, freed from repetitive tasks.
+
+Ultimately, *how* we utilize this technology is more important than the technology itself. Human creativity, ethical judgment, and professional expertise will remain core elements of software development, even in the age of AI. As AI technology and development methodologies continue to evolve, these guidelines should be viewed as a starting point for continuous learning and adaptation.
+
+> "It is not the most intellectual of the species that survives; it is not the strongest that survives; but the species that survives is the one that is able best to adapt and adjust to the changing environment in which it finds itself." - Charles Darwin  
+
+
+## Contributing
+
+Sharing your experiences and insights through [Issues](https://github.com/agentic-coding/agentic-coding.github.com/issues), [Discussions](https://github.com/orgs/agentic-coding/discussions), or [Pull Requests](https://github.com/agentic-coding/agentic-coding.github.com/pulls) will greatly help all of us advance 'Agentic Coding' together.
+
+
+## License
+
+Copyright (c) 2025 Benedict Lee
+
+This work is licensed under the Creative Commons Attribution 4.0 International License. 
+To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/ or see the [LICENSE](LICENSE) file.
