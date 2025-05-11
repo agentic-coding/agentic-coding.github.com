@@ -224,6 +224,19 @@ Ultimately, *how* we utilize this technology is more important than the technolo
 
 > "It is not the most intellectual of the species that survives; it is not the strongest that survives; but the species that survives is the one that is able best to adapt and adjust to the changing environment in which it finds itself." - Charles Darwin  
 
+## References
+
+- [Vibe Coding is not an excuse for low-quality work](https://addyo.substack.com/p/vibe-coding-is-not-an-excuse-for)
+- [Claude Code: Best practices for agentic coding](https://www.anthropic.com/engineering/claude-code-best-practices)
+- [A Guide to Master the Art of Vibe Coding](https://www.analyticsvidhya.com/blog/2025/04/vibe-coding-guide/)
+
+### Experiments
+
+- [Is Vibe Coding the start of a new development paradigm?](https://tech.kakao.com/posts/698)
+
+**Vibe Writing**
+> "This document was created through 'Vibe Writing' with Gemini-2.5-Pro, based on insights gained from the above-mentioned reference documents and experiments with 'vibecoding' and 'agentic coding'. The principles were jointly formulated over 20+ conversational turns, and the practices were collaboratively fine-tuned through 300+ conversational turns."
+
 
 ## Contributing
 
